@@ -157,7 +157,6 @@
 
 
 
-
       </table>
       <button @click="healthcount">決定</button>
     </div>
@@ -171,6 +170,7 @@
         <h2>使い方</h2>
         <p>その日の体調を〇✕？(わからない)の３つから選んで記入してね<br>今日の状態をあなたに伝えるよ<br>お医者さんにこの画面を見せてもいいよ<br>もっと記入したいことがあったら備考に書いてね</p>
     </div>
+    <button @click="account">登録</button>
   </div>
 </template>
 
@@ -207,6 +207,9 @@ export default {
     };
   },
   methods: {
+      account() {
+        this.$router.push('/Account')
+      },
       naviOpen: function() {
       this.active = !this.active;
       this.navi = !this.navi;
@@ -526,7 +529,7 @@ p {
     line-height: 130%;
     font-size: 20px
 }
-/*レスポンシブ対応*/
+/*レスポンシブ対応 ハンバーガーメニュー以外*/
 @media screen and (max-width: 768px) {
     h1 {
         font-size: 35px;
