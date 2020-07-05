@@ -34,7 +34,7 @@ export default {
                 });
     data.user.sendEmailVerification().then(() =>{
         this.$router.replace("/signin");
-    });
+                });
             });
         }
     }

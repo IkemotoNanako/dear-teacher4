@@ -12,7 +12,8 @@
         <nav>
             <ul class="inner-nav">
                 <li class="menu"><a href="#1">コンセプト</a></li>
-                <li class="menu"><a href="#2">使い方</a></li> 
+                <li class="menu"><a href="#2">使い方</a></li>
+                <li @click="account">ログイン</li> 
             </ul>
         </nav>
     </header>
@@ -28,6 +29,7 @@
           <ul class="menu-content_inner">
             <li><a href="#1">コンセプト</a></li>
             <li><a href="#2">使い方</a></li>
+            <li @click="account">ログイン</li>
             
           </ul>
         </nav>
@@ -99,64 +101,6 @@
           </td>
           <td><input type="text"></td>
         </tr>
-
-
-
-        <tr>
-          <td>{{yesterday}}</td>
-          <td>
-          <select v-model="selected7">
-            <option disabled value="">選択して下さい</option>
-            <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
-                {{ option.name }}
-            </option>
-        </select>
-          </td>
-          <td>
-          <select v-model="selected8">
-            <option disabled value="">選択して下さい</option>
-            <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
-                {{ option.name }}
-            </option>
-        </select>
-          </td>
-          <td>
-          <select v-model="selected9">
-            <option disabled value="">選択して下さい</option>
-            <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
-                {{ option.name }}
-            </option>
-        </select>
-          </td>
-          <td>
-          <select v-model="selected10">
-            <option disabled value="">選択して下さい</option>
-            <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
-                {{ option.name }}
-            </option>
-        </select>
-          </td>
-          <td>
-          <select v-model="selected11">
-            <option disabled value="">選択して下さい</option>
-            <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
-                {{ option.name }}
-            </option>
-        </select>
-          </td>
-          <td>
-          <select v-model="selected12">
-            <option disabled value="">選択して下さい</option>
-            <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
-                {{ option.name }}
-            </option>
-        </select>
-          </td>
-          <td><input type="text"></td>
-        </tr>
-
-
-
       </table>
       <button @click="healthcount">決定</button>
     </div>
@@ -168,15 +112,13 @@
     </div>
     <div class="explain" id="2">
         <h2>使い方</h2>
-        <p>その日の体調を〇✕？(わからない)の３つから選んで記入してね<br>今日の状態をあなたに伝えるよ<br>お医者さんにこの画面を見せてもいいよ<br>もっと記入したいことがあったら備考に書いてね</p>
+        <p>その日の体調を〇✕？(わからない)の３つから選んで記入してね<br>今日の状態をあなたに伝えるよ<br>ログインしたら記録が残るよ<br>その記録をお医者さんに見せてもいいよ<br>もっと記入したいことがあったら備考に書いてね</p>
     </div>
-    <button @click="account">登録</button>
   </div>
 </template>
 
 <script>
 var date = new Date()
-var yesterdaydate = date.getDate() -1
 export default {
   data(){
     return{
@@ -186,19 +128,12 @@ export default {
       selected4: '',
       selected5: '',
       selected6: '',
-      selected7: '',
-      selected8: '',
-      selected9: '',
-      selected10: '',
-      selected11: '',
-      selected12: '',
       options: [
         { id: 1, name: '〇' },
         { id: 2, name: '✕' },
         { id: 3, name: '？' }
                 ],
      now: date.getMonth() + "/" + date.getDate(),
-     yesterday: date.getMonth() + "/" + yesterdaydate,
      bad: false,
      soso: false,
      good: false,
@@ -208,7 +143,7 @@ export default {
   },
   methods: {
       account() {
-        this.$router.push('/Account')
+        this.$router.push('/Signin')
       },
       naviOpen: function() {
       this.active = !this.active;
@@ -391,12 +326,12 @@ header {
     justify-content: center;
     line-height: 60px;
     list-style: none;
-    padding-left: 60px;
+    padding-left: 20px;
     padding-top: 15px;
 }
 h1 {
     color: #000;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: bold;
     padding: 20px;
     font-style: italic;

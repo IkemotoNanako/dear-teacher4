@@ -6,7 +6,7 @@
             <input placeholder="メールアドレス" type="email" v-model="email" />
             <input placeholder="パスワード" type="password" v-model="password" />
             <button @click="signIn">ログイン</button>
-            <p class="login">会員登録は<a class="router" @click="$router.push('/signup')">こちら</a>
+            <p class="login">メンバー登録は<a class="router" @click="$router.push('/signup')">こちら</a>
             </p>
         </div>
     </div>
