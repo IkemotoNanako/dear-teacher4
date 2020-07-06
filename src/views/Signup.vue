@@ -1,6 +1,6 @@
 <template>
     <div class="signup">
-        <div class="ccard">
+        <div class="card">
             <p class="title">新規登録</p>
             <div class="form">
                 <input type="text" placeholder="ユーザーネーム" v-model="name" />
@@ -34,7 +34,7 @@ export default {
                 });
     data.user.sendEmailVerification().then(() =>{
         this.$router.replace("/signin");
-                });
+    });
             });
         }
     }
@@ -57,7 +57,7 @@ export default {
 .form {
     text-align: center;
 }
-.input {
+input {
     margin-top: 15px;
     width: 80%;
     border-radius: 10px;

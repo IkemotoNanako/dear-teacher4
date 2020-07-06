@@ -8,12 +8,12 @@
     </div>
     <img src="https://media.istockphoto.com/vectors/cute-hanging-sloth-vector-id1093750176?k=6&m=1093750176&s=612x612&w=0&h=tO5AnsToo9WqSeKXIXDDGPGzANAUVLs8laf1WvIPMfI=" alt="" class="sloth"> 
     <header>
-        <h1>SLOTH HEALTH  体調管理代行サービス</h1>
+        <h1>SLOTH HEALTH  体調管理代行サービス<br>お試し版</h1>
         <nav>
             <ul class="inner-nav">
                 <li class="menu"><a href="#1">コンセプト</a></li>
                 <li class="menu"><a href="#2">使い方</a></li>
-                <li @click="account">ログイン</li> 
+                <li class="menu" @click="account"><a>ログイン</a></li> 
             </ul>
         </nav>
     </header>
@@ -29,15 +29,15 @@
           <ul class="menu-content_inner">
             <li><a href="#1">コンセプト</a></li>
             <li><a href="#2">使い方</a></li>
-            <li @click="account">ログイン</li>
+            <li @click="account"><a>ログイン</a></li>
             
           </ul>
         </nav>
     </transition>
     <div>
-      <div v-if="bad" class="health-tell bad">疲れているよ<br>十分頑張っているから休めるだけ休んでね</div>
-      <div v-if="soso" class="health-tell soso">疲れ気味だよ<br>自分の体を大切にね</div>
-      <div v-if="good" class="health-tell good">記録上はまだ大丈夫だよ<br>でも、心の声を優先して休んでね</div>
+      <div v-if="bad" class="health-tell">疲れているよ<br>十分頑張っているから休めるだけ休んでね</div>
+      <div v-if="soso" class="health-tell">疲れ気味だよ<br>自分の体を大切にね</div>
+      <div v-if="good" class="health-tell">記録上はまだ大丈夫だよ<br>でも、心の声を優先して休んでね</div>
       <table>
         <tr>
           <th>日付</th>
@@ -112,7 +112,7 @@
     </div>
     <div class="explain" id="2">
         <h2>使い方</h2>
-        <p>その日の体調を〇✕？(わからない)の３つから選んで記入してね<br>今日の状態をあなたに伝えるよ<br>ログインしたら記録が残るよ<br>その記録をお医者さんに見せてもいいよ<br>もっと記入したいことがあったら備考に書いてね</p>
+        <p>その日の体調を〇✕？(わからない)の３つから選んで記入してね<br>今日の状態をあなたに伝えるよ<br>ログインしてメンバーになったら記録が残るよ<br>その記録をお医者さんに見せてもいいよ<br>もっと記入したいことがあったら備考に書いてね</p>
     </div>
   </div>
 </template>
@@ -212,15 +212,16 @@ export default {
 <style scoped>
 /*表*/
 table {
-   margin-left: 50px
+   margin-left: 50px;
+   padding-top: 70px;
  }
  button {
-   margin-left: 800px
+   margin-left: 970px
  }
  /*体調通知*/
  .health-tell {
    text-align:center;
-   margin: 50px;
+   margin: 160px 300px 20px 300px;
    font-size: 20px;
    background: #bae2fd;
    padding: 20px;
@@ -480,9 +481,6 @@ p {
     }
     .title {
         text-shadow: 2px 2px 3px grey;
-    }
-    table {
-
     }
 }
  
